@@ -1,0 +1,122 @@
+:root {
+  --course-fnt-size: 24px;
+  --course-fnt-color: orange;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.playground {
+  display: grid;
+  height: 100vh;
+  grid-template-areas:
+    'headerCrs headerCrs'
+    'asideCrs mainCrs'
+    'footerCrs footerCrs';
+  grid-template-columns: 360px 1fr;
+  grid-template-rows: 64px 1fr 64px;
+  background-color: rgb(81, 81, 81);
+}
+@media (max-width: 800px) {
+  .playground {
+    grid-template-areas:
+      'headerCrs'
+      'asideCrs'
+      'mainCrs'
+      'footerCrs';
+    grid-template-columns: 1fr;
+    grid-template-rows: 64px max-content 1fr 64px;
+  }
+}
+
+#header-course {
+  grid-area: headerCrs;
+  box-shadow: 6px 6px 15px rgb(2, 2, 2);
+  background: linear-gradient(to bottom, rgb(74, 75, 74) 0%,rgb(123, 126, 123) 30%,rgb(128, 133, 128) 42%,rgb(105, 109, 105) 42%,rgba(14,14,14,1) 90%);
+  border-radius: 10px;
+  
+  
+}
+#aside-course {
+  grid-area: asideCrs;
+  box-shadow: 2px 2px 4px grey;
+}
+#main-course {
+  grid-area: mainCrs;
+  box-shadow: 2px 2px 4px grey;
+  display: grid;
+}
+#footer-course {
+  grid-area: footerCrs;
+  color: var(--course-fnt-color);
+  font-size: var(--course-fnt-size);
+  text-align: center;
+  line-height: 64px;
+}
+
+.place-course {
+  color: var(--course-fnt-color);
+  font-size: calc(var(--course-fnt-size) * 2);
+}
+
+h2.place-course {
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h2.place-course:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
+.auth-course {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: repeat(3, 2em);
+  gap: 8px;
+  width: 460px;
+  border: 1px solid var(--course-fnt-color);
+}
+form button {
+  grid-area: 3 / 2;  
+}
+
+#root-list{
+ display: flex;
+ height: 100%;
+ margin-left: 50%;
+ list-style: none;
+ cursor: pointer; 
+}
+
+.file{
+  padding: 0 30px;
+  border-left: rgb(8, 8, 8) solid 4px;
+  cursor: pointer;
+}
+.file:hover{
+  background: radial-gradient(ellipse at center, rgba(125,126,125,1) 0%,rgba(125,126,125,1) 30%,rgba(125,126,125,1) 42%,rgba(125,126,125,1) 42%,rgba(14,14,14,1) 90%); 
+  transition: 2s;
+  box-shadow: 6px 6px 15px rgb(2, 2, 2);
+  height: 90%;
+}
+
+a{
+  display: flex;
+  color:rgba(249,188,5,1) ;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Josefin Sans', sans-serif;
+  display: flex;
+  padding-top: 15px;
+  cursor: pointer;
+}
+
+a:hover{
+  color: yellow;
+  transition: 0.5s;
+}
+
